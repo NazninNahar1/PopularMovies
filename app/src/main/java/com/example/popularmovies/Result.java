@@ -1,12 +1,9 @@
-
 package com.example.popularmovies;
 
 import java.io.Serializable;
 import java.util.List;
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 
 public class Result implements Serializable
 {
@@ -53,32 +50,13 @@ public class Result implements Serializable
     @SerializedName("vote_count")
     @Expose
     private int voteCount;
-    private final static long serialVersionUID = -5709218958586090586L;
+    private final static long serialVersionUID = -5907332192597958983L;
 
-    /**
-     * No args constructor for use in serialization
-     * 
-     */
+
     public Result() {
     }
 
-    /**
-     * 
-     * @param overview
-     * @param voteAverage
-     * @param releaseDate
-     * @param video
-     * @param genreIds
-     * @param originalLanguage
-     * @param title
-     * @param originalTitle
-     * @param popularity
-     * @param backdropPath
-     * @param id
-     * @param voteCount
-     * @param adult
-     * @param posterPath
-     */
+
     public Result(boolean adult, String backdropPath, List<Integer> genreIds, int id, String originalLanguage, String originalTitle, String overview, double popularity, String posterPath, String releaseDate, String title, boolean video, double voteAverage, int voteCount) {
         super();
         this.adult = adult;

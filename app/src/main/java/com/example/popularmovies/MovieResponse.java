@@ -1,14 +1,12 @@
-
 package com.example.popularmovies;
 
 import java.io.Serializable;
 import java.util.List;
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 
-public class MovieDetails implements Serializable
+public class MovieResponse implements Serializable
 {
 
     @SerializedName("page")
@@ -23,23 +21,11 @@ public class MovieDetails implements Serializable
     @SerializedName("total_results")
     @Expose
     private int totalResults;
-    private final static long serialVersionUID = -5613205754060895505L;
-
-    /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public MovieDetails() {
+    private final static long serialVersionUID = -6873998897859991580L;
+    public MovieResponse() {
     }
 
-    /**
-     * 
-     * @param totalResults
-     * @param totalPages
-     * @param page
-     * @param results
-     */
-    public MovieDetails(int page, List<Result> results, int totalPages, int totalResults) {
+    public MovieResponse(int page, List<Result> results, int totalPages, int totalResults) {
         super();
         this.page = page;
         this.results = results;
