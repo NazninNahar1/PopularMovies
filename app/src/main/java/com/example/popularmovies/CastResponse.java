@@ -1,11 +1,14 @@
+
 package com.example.popularmovies;
 
 import java.io.Serializable;
 import java.util.List;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class MovieDetailsResponse implements Serializable
+
+public class CastResponse implements Serializable
 {
 
     @SerializedName("adult")
@@ -16,10 +19,10 @@ public class MovieDetailsResponse implements Serializable
     private String backdropPath;
     @SerializedName("belongs_to_collection")
     @Expose
-    private Object belongsToCollection;
+    private BelongsToCollection belongsToCollection;
     @SerializedName("budget")
     @Expose
-    private long budget;
+    private int budget;
     @SerializedName("genres")
     @Expose
     private List<Genre> genres = null;
@@ -28,7 +31,7 @@ public class MovieDetailsResponse implements Serializable
     private String homepage;
     @SerializedName("id")
     @Expose
-    private long id;
+    private int id;
     @SerializedName("imdb_id")
     @Expose
     private String imdbId;
@@ -58,10 +61,10 @@ public class MovieDetailsResponse implements Serializable
     private String releaseDate;
     @SerializedName("revenue")
     @Expose
-    private long revenue;
+    private int revenue;
     @SerializedName("runtime")
     @Expose
-    private long runtime;
+    private int runtime;
     @SerializedName("spoken_languages")
     @Expose
     private List<SpokenLanguage> spokenLanguages = null;
@@ -82,18 +85,18 @@ public class MovieDetailsResponse implements Serializable
     private double voteAverage;
     @SerializedName("vote_count")
     @Expose
-    private long voteCount;
-    private final static long serialVersionUID = 492904917018300136L;
+    private int voteCount;
+    private final static long serialVersionUID = -6131531911778436660L;
 
     /**
      * No args constructor for use in serialization
-     *
+     * 
      */
-    public MovieDetailsResponse() {
+    public CastResponse() {
     }
 
     /**
-     *
+     * 
      * @param imdbId
      * @param video
      * @param title
@@ -120,7 +123,7 @@ public class MovieDetailsResponse implements Serializable
      * @param homepage
      * @param status
      */
-    public MovieDetailsResponse(boolean adult, String backdropPath, Object belongsToCollection, long budget, List<Genre> genres, String homepage, long id, String imdbId, String originalLanguage, String originalTitle, String overview, double popularity, String posterPath, List<ProductionCompany> productionCompanies, List<ProductionCountry> productionCountries, String releaseDate, long revenue, long runtime, List<SpokenLanguage> spokenLanguages, String status, String tagline, String title, boolean video, double voteAverage, long voteCount) {
+    public CastResponse(boolean adult, String backdropPath, BelongsToCollection belongsToCollection, int budget, List<Genre> genres, String homepage, int id, String imdbId, String originalLanguage, String originalTitle, String overview, double popularity, String posterPath, List<ProductionCompany> productionCompanies, List<ProductionCountry> productionCountries, String releaseDate, int revenue, int runtime, List<SpokenLanguage> spokenLanguages, String status, String tagline, String title, boolean video, double voteAverage, int voteCount) {
         super();
         this.adult = adult;
         this.backdropPath = backdropPath;
@@ -165,19 +168,19 @@ public class MovieDetailsResponse implements Serializable
         this.backdropPath = backdropPath;
     }
 
-    public Object getBelongsToCollection() {
+    public BelongsToCollection getBelongsToCollection() {
         return belongsToCollection;
     }
 
-    public void setBelongsToCollection(Object belongsToCollection) {
+    public void setBelongsToCollection(BelongsToCollection belongsToCollection) {
         this.belongsToCollection = belongsToCollection;
     }
 
-    public long getBudget() {
+    public int getBudget() {
         return budget;
     }
 
-    public void setBudget(long budget) {
+    public void setBudget(int budget) {
         this.budget = budget;
     }
 
@@ -197,11 +200,11 @@ public class MovieDetailsResponse implements Serializable
         this.homepage = homepage;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -277,19 +280,19 @@ public class MovieDetailsResponse implements Serializable
         this.releaseDate = releaseDate;
     }
 
-    public long getRevenue() {
+    public int getRevenue() {
         return revenue;
     }
 
-    public void setRevenue(long revenue) {
+    public void setRevenue(int revenue) {
         this.revenue = revenue;
     }
 
-    public long getRuntime() {
+    public int getRuntime() {
         return runtime;
     }
 
-    public void setRuntime(long runtime) {
+    public void setRuntime(int runtime) {
         this.runtime = runtime;
     }
 
@@ -341,15 +344,12 @@ public class MovieDetailsResponse implements Serializable
         this.voteAverage = voteAverage;
     }
 
-    public long getVoteCount() {
+    public int getVoteCount() {
         return voteCount;
     }
 
-    public void setVoteCount(long voteCount) {
+    public void setVoteCount(int voteCount) {
         this.voteCount = voteCount;
     }
-
-
-
 
 }

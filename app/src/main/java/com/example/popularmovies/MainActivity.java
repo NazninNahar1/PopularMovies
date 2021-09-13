@@ -1,7 +1,6 @@
 package com.example.popularmovies;
+
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -18,7 +17,6 @@ import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 
 import java.io.IOException;
-import java.net.URISyntaxException;
 import java.util.List;
 
 import okhttp3.OkHttpClient;
@@ -67,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         @Override
-        public MyViewHolder onCreateViewHolder( ViewGroup parent, int viewType) {
+        public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
             View mItemView = LayoutInflater.from(MainActivity.this)
                     .inflate(R.layout.movie_list, parent, false);
@@ -75,11 +73,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
         @Override
-        public void onBindViewHolder( MainActivity.MyViewHolder holder, int position) {
+        public void onBindViewHolder(MainActivity.MyViewHolder holder, int position) {
             holder.name.setText(movieList.get(position).getTitle());
 
             Glide.with(MainActivity.this)
-                    .load("https://image.tmdb.org/t/p/w500"+movieList.get(position).getPosterPath())
+                    .load("https://image.tmdb.org/t/p/w500" + movieList.get(position).getPosterPath())
                     .into(holder.flag);
             holder.rating.setText(String.valueOf(movieList.get(position).getVoteAverage()));
             holder.cardView.setOnClickListener(new View.OnClickListener() {
@@ -94,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(MainActivity.this, MovieDetail.class);
+
                     String send = null;
                     try {
                         send = run("https://api.themoviedb.org/3/movie/19404/credits?api_key=3fa9058382669f72dcb18fb405b7a831");
@@ -105,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
                     } catch (URISyntaxException e) {
                         e.printStackTrace();
                     }
+
                 }
             });*/
 
@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    public class MyViewHolder extends RecyclerView.ViewHolder {
         View cardView;
         TextView name, rating;
         ImageView flag;
@@ -126,11 +126,10 @@ public class MainActivity extends AppCompatActivity {
             super(itemView);
             name = itemView.findViewById(R.id.title);
             rating = itemView.findViewById(R.id.rating);
-            flag = itemView.findViewById(R.id.poster);
+            flag = itemView.findViewById(R.id.profile_Pic);
             cardView = itemView;
         }
     }
-
 }
 
 

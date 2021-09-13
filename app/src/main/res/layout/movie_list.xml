@@ -14,7 +14,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/poster"
+            android:id="@+id/profile_Pic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
@@ -24,7 +24,7 @@
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/poster"
+            android:layout_alignBottom="@+id/profile_Pic"
             android:background="#60000000"
             android:padding="8dp"
             android:text="test"
